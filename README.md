@@ -1,6 +1,3 @@
-
-
-````markdown
 # Lab1: Защищенный REST API с интеграцией в CI/CD
 
 ## Описание проекта
@@ -9,12 +6,6 @@
 
 ### Технологии
 - Node.js + Express
-- SQLite + Sequelize (ORM)
-- JWT для аутентификации
-- bcrypt для хэширования паролей
-- escape-html для защиты от XSS
-- GitHub Actions для CI/CD
-- npm audit для SAST и SCA
 
 ---
 
@@ -220,4 +211,5 @@ lab1/
 
 * Студент: Гладкая Ксения 
 * Группа: P3419
+
 
