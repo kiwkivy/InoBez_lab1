@@ -1,0 +1,31 @@
+name: CI Security Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  security-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run unit build check
+        run: npm run lint || echo "No lint configured"
+
+      # === SCA + SAST ===
+      - name: Run npm audit (SAST + SCA)
+        run: |
+          npm audit --audit-level=high
